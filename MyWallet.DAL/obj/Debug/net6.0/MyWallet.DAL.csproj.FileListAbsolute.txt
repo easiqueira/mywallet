@@ -1,0 +1,17 @@
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.DAL.deps.json
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.DAL.runtimeconfig.json
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.DAL.dll
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.DAL.pdb
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.BLL.dll
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\bin\Debug\net6.0\MyWallet.BLL.pdb
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.csproj.AssemblyReference.cache
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.AssemblyInfoInputs.cache
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.AssemblyInfo.cs
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.csproj.CoreCompileInputs.cache
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.csproj.CopyComplete
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.dll
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\refint\MyWallet.DAL.dll
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.pdb
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\MyWallet.DAL.genruntimeconfig.cache
+C:\Elaine\Desenvolvimento\MyWallet\MyWallet.API\MyWallet.DAL\obj\Debug\net6.0\ref\MyWallet.DAL.dll
