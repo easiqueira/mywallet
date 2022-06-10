@@ -7,3 +7,4 @@ namespace MyWallet.API
         public static string ChaveSecreta = Guid.NewGuid().ToString();
     }
 }
+
