@@ -1,9 +1,6 @@
 ﻿using ControleFinanceiro.BLL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ControleFinanceiro.DAL.Mapeamentos
 {
@@ -17,6 +14,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
 
             builder.HasMany(c => c.Ganhos).WithOne(c => c.Mes);
             builder.HasMany(c => c.Despesas).WithOne(c => c.Mes);
+            builder.HasMany(c => c.Reservas).WithOne(c => c.Mes);
 
             builder.HasData(
                 new Mes

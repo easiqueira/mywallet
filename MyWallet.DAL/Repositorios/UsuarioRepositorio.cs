@@ -36,6 +36,19 @@ namespace MyWallet.DAL.Repositorios
             }
         }
 
+        public async Task AtualizarUsuario(Usuario usuario)
+        {
+            try
+            {
+                await _gerenciadorUsuarios.UpdateAsync(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public async Task IncluirUsuarioEmFuncao(Usuario usuario, string funcao)
         {
             try

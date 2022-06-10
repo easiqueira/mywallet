@@ -1,9 +1,6 @@
 ﻿using ControleFinanceiro.BLL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MyWallet.DAL.Mapeamentos
 {
@@ -21,6 +18,8 @@ namespace MyWallet.DAL.Mapeamentos
             builder.HasMany(c => c.Cartoes).WithOne(c => c.Usuario).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(c => c.Despesas).WithOne(c => c.Usuario).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(c => c.Ganhos).WithOne(c => c.Usuario).OnDelete(DeleteBehavior.NoAction);
+            builder.HasMany(c => c.Reservas).WithOne(c => c.Usuario).OnDelete(DeleteBehavior.NoAction);
+            builder.HasMany(c => c.Metas).WithOne(c => c.Usuario).OnDelete(DeleteBehavior.NoAction);
 
             builder.ToTable("Usuarios");
         }

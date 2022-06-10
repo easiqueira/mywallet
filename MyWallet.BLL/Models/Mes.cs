@@ -8,5 +8,6 @@ namespace ControleFinanceiro.BLL.Models
         public string Nome { get; set; }
         public virtual ICollection<Despesa> Despesas { get; set; }
         public virtual ICollection<Ganho> Ganhos { get; set; }
+        public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }

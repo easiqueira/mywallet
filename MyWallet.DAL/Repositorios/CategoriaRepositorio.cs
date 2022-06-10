@@ -20,7 +20,7 @@ namespace MyWallet.DAL.Repositorios
         {
             try
             {
-                return _contexto.Categorias.Include(c => c.Tipo);
+                return _contexto.Categorias.Include(c => c.TipoMovimentacao);
             }
             catch (Exception)
             {
@@ -33,7 +33,7 @@ namespace MyWallet.DAL.Repositorios
         {
             try
             {
-                var entity = await _contexto.Categorias.Include(c => c.Tipo).FirstOrDefaultAsync(c => c.CategoriaId == id);
+                var entity = await _contexto.Categorias.Include(c => c.TipoMovimentacao).FirstOrDefaultAsync(c => c.CategoriaId == id);
                 return entity;
             }
             catch (Exception)
@@ -47,8 +47,20 @@ namespace MyWallet.DAL.Repositorios
         {
             try
             {
-                var entity = _contexto.Categorias.Include(c => c.Tipo).Where(c => c.Nome.Contains(nomeCategoria));
+                var entity = _contexto.Categorias.Include(c => c.TipoMovimentacao).Where(c => c.Nome.Contains(nomeCategoria));
                 return entity;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IQueryable<Categoria> ObterCategoriasPeloTipo(string tipo)
+        {
+            try
+            {
+                return _contexto.Categorias.Include(c => c.TipoMovimentacao).Where(c => c.TipoMovimentacao.Nome == tipo);
             }
             catch (Exception ex)
             {

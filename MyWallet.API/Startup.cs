@@ -9,10 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using MyWallet.API;
 using MyWallet.API.Extensions;
 using MyWallet.API.Validacoes;
 using MyWallet.API.ViewModels;
+using MyWallet.BLL.Models;
 using MyWallet.DAL;
 using MyWallet.DAL.Interfaces;
 using MyWallet.DAL.Repositorios;
@@ -38,16 +40,30 @@ namespace ControleFinanceiro.API
 
             services.ConfigurarSenhaUsuario();
 
+            services.AddScoped<ICartaoRepositorio, CartaoRepositorio>();
             services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
-            services.AddScoped<ITipoRepositorio, TipoRepositorio>();
+            services.AddScoped<IDespesaRepositorio, DespesaRepositorio>();
+            services.AddScoped<IReservaRepositorio, ReservaRepositorio>();
+            services.AddScoped<ITipoMovimentacaoRepositorio, TipoMovimentacaoRepositorio>();
+            services.AddScoped<IMetaRepositorio, MetaRepositorio>();
+            services.AddScoped<IMesRepositorio, MesRepositorio>();
+            services.AddScoped<IGanhosRepositorio, GanhoRepositorio>();
             services.AddScoped<IFuncaoRepositorio, FuncaoRepositorio>();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddScoped<IGraficoRepositorio, GraficoRepositorio>();
 
             services.AddTransient<IValidator<Categoria>, CategoriaValidator>();
+            services.AddTransient<IValidator<Cartao>, CartaoValidator>();
+            services.AddTransient<IValidator<Despesa>, DespesaValidator>();
+            services.AddTransient<IValidator<Ganho>, GanhoValidator>();
+            services.AddTransient<IValidator<Reserva>, ReservaValidator>();
+            services.AddTransient<IValidator<TipoMovimentacao>, TipoMovimentacaoValidator>();
+            services.AddTransient<IValidator<Meta>, MetaValidator>();
 
             services.AddTransient<IValidator<FuncoesViewModel>, FuncoesViewModelValidator>();
             services.AddTransient<IValidator<RegistroViewModel>, RegistroViewModelValidator>();
             services.AddTransient<IValidator<LoginViewModel>, LoginViewModelValidator>();
+            services.AddTransient<IValidator<AtualizarUsuarioViewModel>, AtualizarUsuarioViewModelValidator>();
 
             services.AddCors();
 
@@ -86,6 +102,11 @@ namespace ControleFinanceiro.API
                     opcoes.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             services.AddRazorPages();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyWallet", Version = "v1" });
+            });
         }
 
 
@@ -121,6 +142,13 @@ namespace ControleFinanceiro.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {
+                c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
             app.UseSpa(spa =>

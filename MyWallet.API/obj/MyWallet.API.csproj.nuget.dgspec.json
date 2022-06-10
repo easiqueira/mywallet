@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj": {}
+    "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj": {}
   },
   "projects": {
-    "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj": {
+    "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj",
+        "projectUniqueName": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj",
         "projectName": "MyWallet.API",
-        "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj",
+        "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.API\\MyWallet.API.csproj",
         "packagesPath": "C:\\Users\\CLIENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.API\\obj\\",
+        "outputPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -33,11 +33,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
-                "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj"
+              "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
+                "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj"
               },
-              "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj": {
-                "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj"
+              "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj": {
+                "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj"
               }
             }
           }
@@ -94,7 +94,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.3.0, )"
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -119,14 +119,14 @@
         }
       }
     },
-    "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
+    "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
+        "projectUniqueName": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
         "projectName": "MyWallet.BLL",
-        "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
+        "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
         "packagesPath": "C:\\Users\\CLIENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\obj\\",
+        "outputPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -167,6 +167,10 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -188,14 +192,14 @@
         }
       }
     },
-    "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj": {
+    "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj",
+        "projectUniqueName": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj",
         "projectName": "MyWallet.DAL",
-        "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj",
+        "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\MyWallet.DAL.csproj",
         "packagesPath": "C:\\Users\\CLIENTE\\.nuget\\packages\\",
-        "outputPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.DAL\\obj\\",
+        "outputPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -217,8 +221,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
-                "projectPath": "C:\\Elaine\\Desenvolvimento\\MyWallet\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj"
+              "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj": {
+                "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj"
               }
             }
           }
@@ -250,6 +254,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
             }
           },
           "imports": [

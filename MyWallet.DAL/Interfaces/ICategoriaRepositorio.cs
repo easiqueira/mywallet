@@ -1,8 +1,5 @@
 ﻿using ControleFinanceiro.BLL.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MyWallet.DAL.Interfaces
@@ -12,5 +9,6 @@ namespace MyWallet.DAL.Interfaces
         new IQueryable<Categoria> ObterTodos();
         new Task<Categoria> ObterPeloId(int id);
         IQueryable<Categoria> FiltrarCategorias(string nomeCategoria);
+        IQueryable<Categoria> ObterCategoriasPeloTipo(string tipo);
     }
 }

@@ -8,6 +8,8 @@
 
         public double DespesaTotal { get; set; }
 
+        public double ReservaTotal { get; set; }
+
         public double Saldo { get; set; }
     }
 }

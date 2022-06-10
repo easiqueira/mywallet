@@ -1,4 +1,5 @@
 ﻿using ControleFinanceiro.BLL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,13 @@ namespace MyWallet.API.Controllers
         public UsuariosController(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Administrador")]
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        {
+            return await _usuarioRepositorio.ObterTodos().ToListAsync();
         }
 
         [HttpGet("{id}")]
@@ -158,27 +166,46 @@ namespace MyWallet.API.Controllers
             return new { imagem = usuario.Foto };
         }
 
-        //[HttpPut("AtualizarUsuario")]
-        //public async Task<ActionResult> AtualizarUsuario(AtualizarUsuarioViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Usuario usuario = await _usuarioRepositorio.ObterPeloId(model.Id);
-        //        usuario.UserName = model.UserName;
-        //        usuario.Email = model.Email;
-        //        usuario.CPF = model.CPF;
-        //        usuario.Profissao = model.Profissao;
-        //        usuario.Foto = model.Foto;
+        [HttpPut("AtualizarUsuario")]
+        public async Task<ActionResult> AtualizarUsuario(AtualizarUsuarioViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuario = await _usuarioRepositorio.ObterPeloId(model.Id);
+                usuario.UserName = model.UserName;
+                usuario.Email = model.Email;
+                usuario.CPF = model.CPF;
+                usuario.Profissao = model.Profissao;
+                usuario.Foto = model.Foto;
 
-        //        await _usuarioRepositorio.AtualizarUsuario(usuario);
+                await _usuarioRepositorio.AtualizarUsuario(usuario);
 
-        //        return Ok(new
-        //        {
-        //            mensagem = $"Usuário {usuario.Email} atualizado com sucesso"
-        //        });
-        //    }
+                return Ok(new
+                {
+                    mensagem = $"Usuário {usuario.Email} atualizado com sucesso"
+                });
+            }
 
-        //    return BadRequest(model);
-        //}
+            return BadRequest(model);
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
+        public async Task<ActionResult<Usuario>> DeleteUsuario(string id)
+        {
+            var usuario = await _usuarioRepositorio.ObterPeloId(id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            await _usuarioRepositorio.Excluir(id);
+
+            return Ok(new
+            {
+                mensagem = $"Usuário { usuario.UserName } excluído com sucesso!"
+            });
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ControleFinanceiro.BLL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyWallet.DAL.Interfaces;
@@ -12,18 +13,30 @@ namespace MyWallet.API.Controllers
     public class CategoriasController : ControllerBase
     {
         private readonly ICategoriaRepositorio _categoriaRepositorio;
-        public CategoriasController(ICategoriaRepositorio categoriaRepositorio)
+        private readonly IDespesaRepositorio _despesaRepositorio;
+        private readonly IGanhosRepositorio _ganhosRepositorio;
+        private readonly IReservaRepositorio _reservaRepositorio;
+
+        public CategoriasController(ICategoriaRepositorio categoriaRepositorio,
+            IDespesaRepositorio despesaRepositorio, 
+            IGanhosRepositorio ganhosRepositorio,
+            IReservaRepositorio reservaRepositorio)
         {
             _categoriaRepositorio = categoriaRepositorio;
+            _despesaRepositorio = despesaRepositorio;
+            _ganhosRepositorio = ganhosRepositorio;
+            _reservaRepositorio = reservaRepositorio;
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
             return await _categoriaRepositorio.ObterTodos().ToListAsync();
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
             var categoria = await _categoriaRepositorio.ObterPeloId(id);
@@ -37,6 +50,7 @@ namespace MyWallet.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
         {
             if (ModelState.IsValid)
@@ -53,6 +67,7 @@ namespace MyWallet.API.Controllers
 
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
         {
             if (id != categoria.CategoriaId)
@@ -74,12 +89,27 @@ namespace MyWallet.API.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult<Categoria>> DeleteCategoria(int id)
         {
             var categoria = await _categoriaRepositorio.ObterPeloId(id);
             if(categoria == null)
             {
                 return NotFound();
+            }
+
+            var despesa = _despesaRepositorio.FiltrarDespesas(categoria.Nome);
+            var ganho = _ganhosRepositorio.FiltrarGanhos(categoria.Nome);
+            var reserva = _reservaRepositorio.FiltrarReservas(categoria.Nome);
+
+            if (despesa != null || ganho !=  null || reserva != null)
+            {
+                return Ok(
+                    new
+                    {
+                        Mensagem = $"A Categoria { categoria.Nome } não pode ser excluída pois possui dados associados.",
+                        Erro = true
+                    });
             }
 
             await _categoriaRepositorio.Excluir(id);
@@ -91,10 +121,31 @@ namespace MyWallet.API.Controllers
         }
 
         [HttpGet("FiltrarCategorias/{nomeCategoria}")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategorias(string nomeCategoria)
         {
             return await _categoriaRepositorio.FiltrarCategorias(nomeCategoria).ToListAsync();
         }
 
+        [HttpGet("FiltrarCategoriasDespesas")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasDespesas()
+        {
+            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Despesa").ToListAsync();
+        }
+
+        [Authorize]
+        [HttpGet("FiltrarCategoriasGanhos")]
+        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasGanhos()
+        {
+            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Ganho").ToListAsync();
+        }
+
+        [Authorize]
+        [HttpGet("FiltrarCategoriasReservas")]
+        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasReservas()
+        {
+            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Reserva").ToListAsync();
+        }
     }
 }

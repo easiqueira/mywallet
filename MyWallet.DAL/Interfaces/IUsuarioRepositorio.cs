@@ -13,6 +13,6 @@ namespace MyWallet.DAL.Interfaces
         Task LogarUsuario(Usuario usuario, bool lembrar);
         Task<Usuario> ObterUsuarioPeloEmail(string email);
         Task<IList<string>> ObterFuncoesUsuario(Usuario usuario);
-        //Task AtualizarUsuario(Usuario usuario);
+        Task AtualizarUsuario(Usuario usuario);
     }
 }

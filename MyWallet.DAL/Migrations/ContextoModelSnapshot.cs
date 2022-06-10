@@ -15,7 +15,7 @@ namespace MyWallet.DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.7")
+                .HasAnnotation("ProductVersion", "3.1.24")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -73,17 +73,17 @@ namespace MyWallet.DAL.Migrations
                         .HasColumnType("nvarchar(15)")
                         .HasMaxLength(15);
 
+                    b.Property<int>("IdTipoMovimentacao")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int>("TipoId")
-                        .HasColumnType("int");
-
                     b.HasKey("CategoriaId");
 
-                    b.HasIndex("TipoId");
+                    b.HasIndex("IdTipoMovimentacao");
 
                     b.ToTable("Categorias");
                 });
@@ -170,16 +170,16 @@ namespace MyWallet.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e7444c36-5bf4-4e06-8fe1-ef195ef296e1",
-                            ConcurrencyStamp = "9a5bc06e-7916-4773-8b31-a69d671864db",
+                            Id = "65d8a8fe-7282-4410-967c-4e6e9b670976",
+                            ConcurrencyStamp = "f38c4e29-2aef-4aca-bf48-462f34abc037",
                             Descricao = "Administrador do Sistema",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "858aff6c-5d1f-437f-9733-21f045826ecc",
-                            ConcurrencyStamp = "07bfd32b-14d2-435f-a65a-230eb6a90008",
+                            Id = "a7ef168b-c770-4b3f-84ce-40f81089a905",
+                            ConcurrencyStamp = "a0c2dda0-97a1-4fdb-816c-af8cfd391003",
                             Descricao = "Usuario do Sistema",
                             Name = "Usuario",
                             NormalizedName = "USUARIO"
@@ -310,9 +310,51 @@ namespace MyWallet.DAL.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ControleFinanceiro.BLL.Models.Tipo", b =>
+            modelBuilder.Entity("ControleFinanceiro.BLL.Models.Reserva", b =>
                 {
-                    b.Property<int>("TipoId")
+                    b.Property<int>("ReservaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Ano")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("Dia")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MesId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuarioId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("float");
+
+                    b.HasKey("ReservaId");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.HasIndex("MesId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Reservas");
+                });
+
+            modelBuilder.Entity("ControleFinanceiro.BLL.Models.TipoMovimentacao", b =>
+                {
+                    b.Property<int>("IdTipoMovimentacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -322,21 +364,9 @@ namespace MyWallet.DAL.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.HasKey("TipoId");
+                    b.HasKey("IdTipoMovimentacao");
 
-                    b.ToTable("Tipos");
-
-                    b.HasData(
-                        new
-                        {
-                            TipoId = 1,
-                            Nome = "Despesa"
-                        },
-                        new
-                        {
-                            TipoId = 2,
-                            Nome = "Ganho"
-                        });
+                    b.ToTable("TiposMovimentacao");
                 });
 
             modelBuilder.Entity("ControleFinanceiro.BLL.Models.Usuario", b =>
@@ -525,6 +555,37 @@ namespace MyWallet.DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MyWallet.BLL.Models.Meta", b =>
+                {
+                    b.Property<int>("IdMeta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("IdTipoMovimentacao")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuarioId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("float");
+
+                    b.HasKey("IdMeta");
+
+                    b.HasIndex("IdTipoMovimentacao");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Metas");
+                });
+
             modelBuilder.Entity("ControleFinanceiro.BLL.Models.Cartao", b =>
                 {
                     b.HasOne("ControleFinanceiro.BLL.Models.Usuario", "Usuario")
@@ -536,9 +597,9 @@ namespace MyWallet.DAL.Migrations
 
             modelBuilder.Entity("ControleFinanceiro.BLL.Models.Categoria", b =>
                 {
-                    b.HasOne("ControleFinanceiro.BLL.Models.Tipo", "Tipo")
+                    b.HasOne("ControleFinanceiro.BLL.Models.TipoMovimentacao", "TipoMovimentacao")
                         .WithMany("Categorias")
-                        .HasForeignKey("TipoId")
+                        .HasForeignKey("IdTipoMovimentacao")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -586,6 +647,27 @@ namespace MyWallet.DAL.Migrations
 
                     b.HasOne("ControleFinanceiro.BLL.Models.Usuario", "Usuario")
                         .WithMany("Ganhos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ControleFinanceiro.BLL.Models.Reserva", b =>
+                {
+                    b.HasOne("ControleFinanceiro.BLL.Models.Categoria", "Categoria")
+                        .WithMany("Reservas")
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ControleFinanceiro.BLL.Models.Mes", "Mes")
+                        .WithMany("Reservas")
+                        .HasForeignKey("MesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ControleFinanceiro.BLL.Models.Usuario", "Usuario")
+                        .WithMany("Reservas")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -639,6 +721,21 @@ namespace MyWallet.DAL.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MyWallet.BLL.Models.Meta", b =>
+                {
+                    b.HasOne("ControleFinanceiro.BLL.Models.TipoMovimentacao", "TipoMovimentacao")
+                        .WithMany("Metas")
+                        .HasForeignKey("IdTipoMovimentacao")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ControleFinanceiro.BLL.Models.Usuario", "Usuario")
+                        .WithMany("Metas")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

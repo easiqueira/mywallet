@@ -9,18 +9,19 @@ namespace MyWallet.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TiposController : ControllerBase
+    public class MesesController : ControllerBase
     {
-        private readonly ITipoRepositorio _tipoRepositorio;
-        public TiposController(ITipoRepositorio tipoRepositorio)
+        private readonly IMesRepositorio _mesRepositorio;
+
+        public MesesController(IMesRepositorio mesRepositorio)
         {
-            _tipoRepositorio = tipoRepositorio;
+            _mesRepositorio = mesRepositorio;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tipo>>> GetTipos()
+        public async Task<ActionResult<IEnumerable<Mes>>> GetMeses()
         {
-            return await _tipoRepositorio.ObterTodos().ToListAsync();
+            return await _mesRepositorio.ObterTodos().ToListAsync();
         }
     }
 }
