@@ -1,4 +1,5 @@
 ﻿using ControleFinanceiro.BLL.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,6 @@ namespace MyWallet.DAL.Interfaces
     {
         new IQueryable<TipoMovimentacao> ObterTodos();
         new Task<TipoMovimentacao> ObterPeloId(int id);
-        IQueryable<TipoMovimentacao> FiltrarTiposMovimentacao(string nomeTipo);
+        IList<TipoMovimentacao> FiltrarTiposMovimentacao(string nomeTipo);
     }
 }

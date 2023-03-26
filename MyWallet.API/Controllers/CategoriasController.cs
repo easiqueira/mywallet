@@ -102,7 +102,7 @@ namespace MyWallet.API.Controllers
             var ganho = _ganhosRepositorio.FiltrarGanhos(categoria.Nome);
             var reserva = _reservaRepositorio.FiltrarReservas(categoria.Nome);
 
-            if (despesa != null || ganho !=  null || reserva != null)
+            if (despesa.Count > 0 || ganho.Count > 0 || reserva.Count > 0 )
             {
                 return Ok(
                     new
@@ -129,23 +129,23 @@ namespace MyWallet.API.Controllers
 
         [HttpGet("FiltrarCategoriasDespesas")]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasDespesas()
+        public IEnumerable<Categoria> FiltrarCategoriasDespesas()
         {
-            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Despesa").ToListAsync();
+            return _categoriaRepositorio.ObterCategoriasPeloTipo("Despesa");
         }
 
         [Authorize]
         [HttpGet("FiltrarCategoriasGanhos")]
-        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasGanhos()
+        public IEnumerable<Categoria> FiltrarCategoriasGanhos()
         {
-            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Ganho").ToListAsync();
+            return _categoriaRepositorio.ObterCategoriasPeloTipo("Ganho");
         }
 
         [Authorize]
         [HttpGet("FiltrarCategoriasReservas")]
-        public async Task<ActionResult<IEnumerable<Categoria>>> FiltrarCategoriasReservas()
+        public IEnumerable<Categoria> FiltrarCategoriasReservas()
         {
-            return await _categoriaRepositorio.ObterCategoriasPeloTipo("Reserva").ToListAsync();
+            return _categoriaRepositorio.ObterCategoriasPeloTipo("Reserva");
         }
     }
 }

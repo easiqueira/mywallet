@@ -119,7 +119,10 @@ namespace MyWallet.API.Controllers
 
                 else
                 {
-                    return BadRequest(model);
+                    List<IdentityError> errorList = usuarioCriado.Errors.ToList();
+                    var erros = string.Join(",", errorList.Select(e => e.Description));
+
+                    return NotFound("Erro:" + erros);
                 }
             }
 

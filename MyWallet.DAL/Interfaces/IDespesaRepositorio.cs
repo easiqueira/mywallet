@@ -11,9 +11,9 @@ namespace MyWallet.DAL.Interfaces
 
         void ExcluirDespesas(IEnumerable<Despesa> despesas);
 
-        Task<IEnumerable<Despesa>> ObterDespesasPeloCartaoId(int cartaoId);
+        Task<IList<Despesa>> ObterDespesasPeloCartaoId(int cartaoId);
 
-        IQueryable<Despesa> FiltrarDespesas(string nomeCategoria);
+        IList<Despesa> FiltrarDespesas(string nomeCategoria);
 
         Task<double> ObterDespesaTotalPorUsuarioId(string usuarioId);
     }

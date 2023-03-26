@@ -13,7 +13,7 @@ namespace MyWallet.DAL.Interfaces
 
         Task<IEnumerable<Reserva>> ObterReservasPelaCategoriaId(int categoriaId);
 
-        IQueryable<Reserva> FiltrarReservas(string nomeCategoria);
+        IList<Reserva> FiltrarReservas(string nomeCategoria);
 
         Task<double> ObterReservaTotalPorUsuarioId(string usuarioId);
     }

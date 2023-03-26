@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SonarProjectConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
+  <AnalysisConfigPath>C:\elaine\puc\tcc\projeto\mywallet.api\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
+  <ProjectPath>C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.API\MyWallet.API.csproj</ProjectPath>
+  <FilesToAnalyzePath>C:\elaine\puc\tcc\projeto\mywallet.api\.sonarqube\conf\2\FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>C:\elaine\puc\tcc\projeto\mywallet.api\.sonarqube\out\2</OutPath>
+  <ProjectType>Product</ProjectType>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</SonarProjectConfig>

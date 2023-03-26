@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using MyWallet.DAL.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,18 +16,17 @@ namespace MyWallet.DAL.Repositorios
             _contexto = contexto;
         }
 
-        public IQueryable<Ganho> FiltrarGanhos(string nomeCategoria)
+        public IList<Ganho> FiltrarGanhos(string nomeCategoria)
         {
             try
             {
                 return _contexto.Ganhos
                     .Include(g => g.Mes).Include(g => g.Categoria)
                     .ThenInclude(g => g.TipoMovimentacao)
-                    .Where(g => g.Categoria.Nome.Contains(nomeCategoria) && g.Categoria.TipoMovimentacao.Nome.Contains("Ganho"));
+                    .Where(g => g.Categoria.Nome.Contains(nomeCategoria) && g.Categoria.TipoMovimentacao.Nome.Contains("Ganho")).ToList();
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

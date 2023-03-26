@@ -93,7 +93,7 @@ namespace MyWallet.API.Controllers
             }
 
             var categoria = _categoriaRepositorio.ObterCategoriasPeloTipo(tipoMovimentacao.Nome);
-            if (categoria != null)
+            if (categoria.Count > 0)
             {
                 return Ok(
                     new
@@ -113,9 +113,9 @@ namespace MyWallet.API.Controllers
 
         [HttpGet("FiltrarTiposMovimentacao/{nomeTipo}")]
         [Authorize(Roles = "Administrador")]
-        public async Task<ActionResult<IEnumerable<TipoMovimentacao>>> FiltrarTiposMovimentacao(string nomeTipo)
+        public IList<TipoMovimentacao> FiltrarTiposMovimentacao(string nomeTipo)
         {
-            return await _tipoRepositorio.FiltrarTiposMovimentacao(nomeTipo).ToListAsync();
+            return _tipoRepositorio.FiltrarTiposMovimentacao(nomeTipo);
         }
 
     }

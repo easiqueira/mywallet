@@ -1,0 +1,13 @@
+M
+DC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Cartao.csutf-8P
+GC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Categoria.csutf-8N
+EC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Despesa.csutf-8M
+DC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Funcao.csutf-8L
+CC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Ganho.csutf-8J
+AC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Mes.csutf-8K
+BC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Meta.csutf-8N
+EC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Reserva.csutf-8W
+NC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\TipoMovimentacao.csutf-8N
+EC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Usuario.csutf-8…
+zC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.csutf-8s
+hC:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\obj\Debug\netcoreapp3.1\MyWallet.BLL.AssemblyInfo.csutf-8

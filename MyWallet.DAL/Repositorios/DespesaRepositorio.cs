@@ -24,28 +24,27 @@ namespace MyWallet.DAL.Repositorios
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
 
-        public IQueryable<Despesa> FiltrarDespesas(string nomeCategoria)
+        public IList<Despesa> FiltrarDespesas(string nomeCategoria)
         {
             try
             {
                 return _contexto.Despesas
                     .Include(d => d.Cartao).Include(d => d.Mes)
                     .Include(d => d.Categoria).ThenInclude(d => d.TipoMovimentacao)
-                    .Where(d => d.Categoria.Nome.Contains(nomeCategoria) && d.Categoria.TipoMovimentacao.Nome == "Despesa");
+                    .Where(d => d.Categoria.Nome.Contains(nomeCategoria) && d.Categoria.TipoMovimentacao.Nome == "Despesa").ToList();
+
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
 
-        public async Task<IEnumerable<Despesa>> ObterDespesasPeloCartaoId(int cartaoId)
+        public async Task<IList<Despesa>> ObterDespesasPeloCartaoId(int cartaoId)
         {
             try
             {

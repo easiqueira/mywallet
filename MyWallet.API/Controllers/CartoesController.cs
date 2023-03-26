@@ -86,9 +86,9 @@ namespace MyWallet.API.Controllers
             if (cartao == null)
                 return NotFound();
 
-            IEnumerable<Despesa> despesas = await _despesaRepositorio.ObterDespesasPeloCartaoId(cartao.CartaoId);
+            IList<Despesa> despesas = await _despesaRepositorio.ObterDespesasPeloCartaoId(cartao.CartaoId);
 
-            if (despesas != null)
+            if (despesas.Count > 0)
             {
                 return Ok(
                     new

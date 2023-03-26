@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using MyWallet.DAL.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -56,11 +57,11 @@ namespace MyWallet.DAL.Repositorios
             }
         }
 
-        public IQueryable<Categoria> ObterCategoriasPeloTipo(string tipo)
+        public IList<Categoria> ObterCategoriasPeloTipo(string tipo)
         {
             try
             {
-                return _contexto.Categorias.Include(c => c.TipoMovimentacao).Where(c => c.TipoMovimentacao.Nome == tipo);
+                return _contexto.Categorias.Include(c => c.TipoMovimentacao).Where(c => c.TipoMovimentacao.Nome == tipo).ToList();
             }
             catch (Exception ex)
             {

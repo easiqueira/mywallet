@@ -1595,11 +1595,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
+      "projectUniqueName": "C:\\elaine\\puc\\tcc\\projeto\\mywallet.api\\MyWallet.BLL\\MyWallet.BLL.csproj",
       "projectName": "MyWallet.BLL",
-      "projectPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\MyWallet.BLL.csproj",
+      "projectPath": "C:\\elaine\\puc\\tcc\\projeto\\mywallet.api\\MyWallet.BLL\\MyWallet.BLL.csproj",
       "packagesPath": "C:\\Users\\CLIENTE\\.nuget\\packages\\",
-      "outputPath": "C:\\Elaine\\PUC\\TCC\\Projeto\\MyWallet.API\\MyWallet.BLL\\obj\\",
+      "outputPath": "C:\\elaine\\puc\\tcc\\projeto\\mywallet.api\\MyWallet.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1661,7 +1661,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

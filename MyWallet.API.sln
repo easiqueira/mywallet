@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWallet.API", "MyWallet.API\MyWallet.API.csproj", "{EDBCD6D8-77A0-49FD-B163-BF9C926271C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWallet.API", "MyWallet.API\MyWallet.API.csproj", "{EDBCD6D8-77A0-49FD-B163-BF9C926271C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWallet.BLL", "MyWallet.BLL\MyWallet.BLL.csproj", "{A1D51335-0798-4542-8EE6-E939C791A205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWallet.BLL", "MyWallet.BLL\MyWallet.BLL.csproj", "{A1D51335-0798-4542-8EE6-E939C791A205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWallet.DAL", "MyWallet.DAL\MyWallet.DAL.csproj", "{C2C7D4A4-4AEB-4122-B0B9-68E0649AFC21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWallet.DAL", "MyWallet.DAL\MyWallet.DAL.csproj", "{C2C7D4A4-4AEB-4122-B0B9-68E0649AFC21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{19A069E9-29AC-4BEC-ABA5-F97181175A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

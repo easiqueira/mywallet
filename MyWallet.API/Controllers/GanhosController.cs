@@ -89,9 +89,9 @@ namespace MyWallet.API.Controllers
         }
 
         [HttpGet("FiltrarGanhos/{nomeCategoria}")]
-        public async Task<IEnumerable<Ganho>> FiltrarGanhos(string nomeCategoria)
+        public IList<Ganho> FiltrarGanhos(string nomeCategoria)
         {
-            return await _ganhosRepositorio.FiltrarGanhos(nomeCategoria).ToListAsync();
+            return _ganhosRepositorio.FiltrarGanhos(nomeCategoria);
         }
     }
 }

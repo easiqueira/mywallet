@@ -1,0 +1,10 @@
+﻿C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Cartao.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Categoria.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Despesa.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Funcao.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Ganho.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Mes.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Meta.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Reserva.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\TipoMovimentacao.cs
+C:\elaine\puc\tcc\projeto\mywallet.api\MyWallet.BLL\Models\Usuario.cs

@@ -93,9 +93,9 @@ namespace MyWallet.API.Controllers
         }
 
         [HttpGet("FiltrarReservas/{nomeCategoria}")]
-        public async Task<IEnumerable<Reserva>> FiltrarReservas(string nomeCategoria)
+        public IList<Reserva> FiltrarReservas(string nomeCategoria)
         {
-            return await _reservaRepositorio.FiltrarReservas(nomeCategoria).ToListAsync();
+            return _reservaRepositorio.FiltrarReservas(nomeCategoria);
         }
     }
 }

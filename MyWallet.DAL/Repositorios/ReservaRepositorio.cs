@@ -29,17 +29,16 @@ namespace MyWallet.DAL.Repositorios
             }
         }
 
-        public IQueryable<Reserva> FiltrarReservas(string nomeCategoria)
+        public IList<Reserva> FiltrarReservas(string nomeCategoria)
         {
             try
             {
                 return _contexto.Reservas
                     .Include(d => d.Categoria).ThenInclude(d => d.TipoMovimentacao)
-                    .Where(d => d.Categoria.Nome.Contains(nomeCategoria) && d.Categoria.TipoMovimentacao.Nome == "Reserva");
+                    .Where(d => d.Categoria.Nome.Contains(nomeCategoria) && d.Categoria.TipoMovimentacao.Nome == "Reserva").ToList();
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
