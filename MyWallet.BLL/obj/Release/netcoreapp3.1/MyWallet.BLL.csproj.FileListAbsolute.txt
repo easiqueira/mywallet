@@ -1,0 +1,10 @@
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\bin\Release\netcoreapp3.1\MyWallet.BLL.deps.json
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\bin\Release\netcoreapp3.1\MyWallet.BLL.dll
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\bin\Release\netcoreapp3.1\MyWallet.BLL.pdb
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.csproj.AssemblyReference.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.AssemblyInfoInputs.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.AssemblyInfo.cs
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.csproj.CoreCompileInputs.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.dll
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.BLL\obj\Release\netcoreapp3.1\MyWallet.BLL.pdb

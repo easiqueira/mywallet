@@ -1,0 +1,16 @@
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.DAL.deps.json
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.DAL.runtimeconfig.json
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.DAL.runtimeconfig.dev.json
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.DAL.dll
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.DAL.pdb
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.BLL.dll
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\bin\Release\netcoreapp3.1\MyWallet.BLL.pdb
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.csproj.AssemblyReference.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.AssemblyInfoInputs.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.AssemblyInfo.cs
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.csproj.CoreCompileInputs.cache
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.csproj.CopyComplete
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.dll
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.pdb
+C:\Elaine\PUC\TCC\Projeto\MyWallet.API\MyWallet.DAL\obj\Release\netcoreapp3.1\MyWallet.DAL.genruntimeconfig.cache
