@@ -67,10 +67,10 @@ namespace ControleFinanceiro.API
 
             services.AddCors();
 
-            services.AddSpaStaticFiles(diretorio =>
-            {
-                diretorio.RootPath = "MyWallet-UI";
-            });
+            //services.AddSpaStaticFiles(diretorio =>
+            //{
+            //    diretorio.RootPath = "MyWallet-UI";
+            //});
 
             var key = Encoding.ASCII.GetBytes(Settings.ChaveSecreta);
             services.AddAuthentication(opcoes =>
@@ -136,7 +136,7 @@ namespace ControleFinanceiro.API
                                     .AllowAnyMethod()
                                     .AllowAnyHeader());
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -146,7 +146,7 @@ namespace ControleFinanceiro.API
 
             app.UseStaticFiles();
 
-            app.UseSpaStaticFiles();
+            //app.UseSpaStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
@@ -160,15 +160,15 @@ namespace ControleFinanceiro.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = Path.Combine(Directory.GetCurrentDirectory(), "MyWallet-UI");
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = Path.Combine(Directory.GetCurrentDirectory(), "MyWallet-UI");
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseProxyToSpaDevelopmentServer($"http://localhost:4200/");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseProxyToSpaDevelopmentServer($"http://localhost:4200/");
+            //    }
+            //});
         }
     }
 }
