@@ -121,6 +121,8 @@ namespace ControleFinanceiro.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -136,11 +138,9 @@ namespace ControleFinanceiro.API
                                     .AllowAnyMethod()
                                     .AllowAnyHeader());
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthentication();
 
             app.UseAuthorization();
 

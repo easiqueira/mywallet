@@ -20,7 +20,7 @@ namespace MyWallet.API.Services
                     new Claim(ClaimTypes.Name, usuario.UserName.ToString()),
                     new Claim(ClaimTypes.Role, funcaoUsuario)
                 }),
-                Expires = DateTime.UtcNow.AddHours(2),
+                Expires = DateTime.UtcNow.AddHours(24),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(chave), SecurityAlgorithms.HmacSha256Signature)
             };
 

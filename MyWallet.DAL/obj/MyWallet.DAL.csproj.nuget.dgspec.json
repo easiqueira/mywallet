@@ -25,9 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Cyrela/_packaging/sellit-packages/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Cyrela/f61f9cf6-017b-41e5-bc9e-48dbe4998b38/_packaging/app-vendas-packages-/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -48,6 +46,10 @@
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Server.IISIntegration": {
+              "target": "Package",
+              "version": "[2.2.1, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
@@ -98,9 +100,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Cyrela/_packaging/sellit-packages/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Cyrela/f61f9cf6-017b-41e5-bc9e-48dbe4998b38/_packaging/app-vendas-packages-/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -125,6 +125,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Microsoft.AspNetCore.Server.IISIntegration": {
+              "target": "Package",
+              "version": "[2.2.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
